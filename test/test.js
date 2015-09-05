@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var index = require('../index');
+// var index = require('../index');
 
 var push = require('../lib/push');
 var pop = require('../lib/pop');
@@ -11,9 +11,6 @@ var unique = require('../lib/unique');
 var uniqueImproved = require('../lib/uniqueImproved');
 var frequency2 = require('../lib/frequency2');
 
-//to be removed shortly
-var wordArray = ['words', 'test', 'test', 'test', 'potato', 'tomato', 'another', 'letter', 'ttttt'];
-var uniqueArray = ['words', 'test', 'potato', 'tomato', 'another', 'letter'];
 
 describe('push', function() {
   var testArray1 = [0, 1, 2, 3];
@@ -69,17 +66,16 @@ describe('unshift', function() {
 });
 
 describe('unique', function() {
-  var wordArray = ['words', 'test', 'test', 'test', 'potato', 'tomato', 'another', 'letter'];
+  var wordArray = ['words', 'test', 'test', 'potato', 'tomato', 'another', 'letter', 'test'];
   var uniqueArray = ['words', 'test', 'potato', 'tomato', 'another', 'letter'];
 
   it('should remove all duplicate words', function() {
     expect(unique(wordArray)).to.eql(uniqueArray);
   });
-
 });
 
 describe('uniqueImproved', function() {
-  var wordArray = ['words', 'test', 'test', 'test', 'potato', 'tomato', 'another', 'letter'];
+  var wordArray = ['words', 'test', 'test', 'potato', 'tomato', 'another', 'letter'];
   var uniqueArray = ['words', 'test', 'potato', 'tomato', 'another', 'letter'];
 
   it('should remove all duplicate words', function() {
@@ -94,7 +90,7 @@ describe('frequency2', function() {
   var wordArray = ['words', 'test', 'potato', 'tomato', 'another', 'letter', 'ttttt'];
 
   it('should find the most frequent used letter', function() {
-    expect(index.frequency2(wordArray)).to.eql('t');
+    expect(frequency2(wordArray)).to.eql('t');
   });
 });
 
